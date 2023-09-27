@@ -2,6 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:smart_home_app/features/ac%20control%20panel/presentation/view/ac_control_panel_screen.dart';
 
 class DeviceCard extends StatelessWidget {
   final String name;
@@ -31,7 +32,7 @@ class DeviceCard extends StatelessWidget {
         closedShape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(20.0))),
         openBuilder: (BuildContext context, VoidCallback _) {
-          return Container();
+          return ControlPanelPage(tag: name);
         },
         tappable: name == "Smart AC" ? true : false,
         closedBuilder: (BuildContext _, VoidCallback openContainer) {
